@@ -49,11 +49,11 @@ public final class LoggerUtil {
     }
 
     public static void successLog(String text) {
-        MessyUtils.instance.getLogger().info("[Meßy's Journal] " + text);
+        MessyUtils.instance.getLogger().info("[Meßy's Utils] " + text);
     }
 
     public static void errorLog(String text) {
-        MessyUtils.instance.getLogger().warning("[Meßy's Journal] " + text);
+        MessyUtils.instance.getLogger().warning("[Meßy's Utils] " + text);
     }
 
     public static void sendAiMessage(Player sender, Component message) {
