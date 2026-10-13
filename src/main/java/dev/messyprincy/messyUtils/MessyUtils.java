@@ -1,6 +1,6 @@
 package dev.messyprincy.messyUtils;
 
-import dev.messyprincy.messyUtils.NamespacedKeys.KeyUtils;
+import dev.messyprincy.messyUtils.keys.KeyUtils;
 import dev.messyprincy.messyUtils.commands.BotCommands;
 import dev.messyprincy.messyUtils.commands.StaffChatCommands;
 import dev.messyprincy.messyUtils.listeners.ChatEventsListener;
