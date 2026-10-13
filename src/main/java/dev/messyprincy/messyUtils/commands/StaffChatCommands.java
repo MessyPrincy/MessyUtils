@@ -16,7 +16,7 @@ import org.bukkit.entity.Player;
 public class StaffChatCommands {
     public LiteralCommandNode<CommandSourceStack> build() {
         return Commands.literal("staffchat")
-                .requires(source -> source.getSender().hasPermission(StaffChatManager.PERMISSION))
+                .requires(source -> source.getSender().hasPermission(StaffChatManager.STAFF_PERMISSION))
                 .executes(context -> {
                     CommandSender sender = context.getSource().getSender();
                     Entity executor = context.getSource().getExecutor();
@@ -44,7 +44,7 @@ public class StaffChatCommands {
                             String message = context.getArgument("message", String.class);
                             Component componentMessage = Component.text(message);
 
-                            StaffChatManager.send(player, componentMessage);
+                            LoggerUtil.sendStaffMessage(player, componentMessage);
                             return Command.SINGLE_SUCCESS;
                         }))
                 .build();

@@ -1,32 +1,36 @@
 package dev.messyprincy.messyUtils.listeners;
 
+import dev.messyprincy.messyUtils.logger.LoggerUtil;
 import dev.messyprincy.messyUtils.managers.StaffChatManager;
 import io.papermc.paper.event.player.AsyncChatEvent;
-import org.bukkit.entity.Player;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.UUID;
 
 public class ChatEventsListener implements Listener {
+    private static final String AI_PREFIX = "IAMAB0T";
+
     @EventHandler (priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onAsyncChatEvent(AsyncChatEvent e) {
         UUID uuid = e.getPlayer().getUniqueId();
 
         if (StaffChatManager.isEnabled(uuid)) {
             e.setCancelled(true);
-            StaffChatManager.send(e.getPlayer(), e.message());
+            LoggerUtil.sendStaffMessage(e.getPlayer(), e.message());
+            return;
         }
-    }
 
-    @EventHandler
-    public void onPlayerQuitEvent(PlayerQuitEvent e) {
-        Player player = e.getPlayer();
+        if (PlainTextComponentSerializer.plainText().serialize(e.message()).startsWith(AI_PREFIX)) {
+            e.setCancelled(true);
+            String messageString = PlainTextComponentSerializer.plainText().serialize(e.message());
+            messageString = messageString.replace(AI_PREFIX, "");
 
-        if (StaffChatManager.isEnabled(player.getUniqueId())) {
-            StaffChatManager.setEnabled(player.getUniqueId(), false);
+            LoggerUtil.sendAiMessage(e.getPlayer(), Component.text(messageString));
+            return;
         }
     }
 }
