@@ -1,0 +1,10 @@
+name: MessyUtils
+description: $description
+prefix: DougDougUtilUtil
+version: '${version}'
+
+main: dev.messyprincy.messyUtils.MessyUtils
+api-version: '26.3'
+load: POSTWORLD
+
+authors: [ MessyPrincy ]
