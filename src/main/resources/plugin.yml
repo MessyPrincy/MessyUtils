@@ -8,3 +8,8 @@ api-version: '26.3'
 load: POSTWORLD
 
 authors: [ MessyPrincy ]
+
+permissions:
+  messyutils.staff:
+    description: Allows use of staff chat
+    default: op
