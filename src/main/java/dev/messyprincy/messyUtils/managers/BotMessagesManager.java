@@ -1,6 +1,6 @@
 package dev.messyprincy.messyUtils.managers;
 
-import dev.messyprincy.messyUtils.keys.KeyUtils;
+import dev.messyprincy.messyUtils.utils.KeyUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;

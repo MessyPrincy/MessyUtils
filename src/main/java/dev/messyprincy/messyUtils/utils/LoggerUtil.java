@@ -1,4 +1,4 @@
-package dev.messyprincy.messyUtils.logger;
+package dev.messyprincy.messyUtils.utils;
 
 import dev.messyprincy.messyUtils.MessyUtils;
 import dev.messyprincy.messyUtils.managers.BotMessagesManager;

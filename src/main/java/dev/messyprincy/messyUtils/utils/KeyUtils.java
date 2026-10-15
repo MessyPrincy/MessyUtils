@@ -1,4 +1,4 @@
-package dev.messyprincy.messyUtils.keys;
+package dev.messyprincy.messyUtils.utils;
 
 import dev.messyprincy.messyUtils.MessyUtils;
 import org.bukkit.NamespacedKey;

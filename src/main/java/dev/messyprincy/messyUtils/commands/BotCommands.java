@@ -2,7 +2,7 @@ package dev.messyprincy.messyUtils.commands;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.tree.LiteralCommandNode;
-import dev.messyprincy.messyUtils.logger.LoggerUtil;
+import dev.messyprincy.messyUtils.utils.LoggerUtil;
 import dev.messyprincy.messyUtils.managers.BotMessagesManager;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;

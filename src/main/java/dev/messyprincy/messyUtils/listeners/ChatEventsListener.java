@@ -1,6 +1,6 @@
 package dev.messyprincy.messyUtils.listeners;
 
-import dev.messyprincy.messyUtils.logger.LoggerUtil;
+import dev.messyprincy.messyUtils.utils.LoggerUtil;
 import dev.messyprincy.messyUtils.managers.StaffChatManager;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.Component;
