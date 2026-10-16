@@ -17,6 +17,8 @@ public final class MessyUtils extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
+        this.saveResource("config.yml", false);
+
         KeyUtils.init();
 
         this.getServer().getPluginManager().registerEvents(new ChatEventsListener(), this);
@@ -28,11 +30,11 @@ public final class MessyUtils extends JavaPlugin {
             event.registrar().register(new UtilsCommands().build());
         });
 
-        LoggerUtil.successLog("MeßyUtils was enabled");
+        LoggerUtil.successLog("Meßy's Utils was enabled");
     }
 
     @Override
     public void onDisable() {
-        LoggerUtil.successLog("MeßyUtils was disabled");
+        LoggerUtil.successLog("Meßy's Utils was disabled");
     }
 }

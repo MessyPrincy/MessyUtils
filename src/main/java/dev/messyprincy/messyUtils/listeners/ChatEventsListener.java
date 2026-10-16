@@ -1,5 +1,6 @@
 package dev.messyprincy.messyUtils.listeners;
 
+import dev.messyprincy.messyUtils.MessyUtils;
 import dev.messyprincy.messyUtils.utils.LoggerUtil;
 import dev.messyprincy.messyUtils.managers.StaffChatManager;
 import io.papermc.paper.event.player.AsyncChatEvent;
@@ -12,7 +13,7 @@ import org.bukkit.event.Listener;
 import java.util.UUID;
 
 public class ChatEventsListener implements Listener {
-    private static final String AI_PREFIX = "IAMAB0T";
+    private static final String AI_PREFIX = MessyUtils.instance.getConfig().getString("ai-prefix");
 
     @EventHandler (priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onAsyncChatEvent(AsyncChatEvent e) {
